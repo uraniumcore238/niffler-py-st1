@@ -45,6 +45,11 @@ def auth(frontend_url, app_user):
     main_page.logout_button_should_be_visible()
     return main_page.get_user_token()
 
+@pytest.fixture(scope="session")
+def auth_client(gateway_url, auth) -> SpendsHttpClient:
+    return SpendsHttpClient(gateway_url, auth)
+
+
 
 @pytest.fixture(scope="session")
 def spends_client(gateway_url, auth) -> SpendsHttpClient:

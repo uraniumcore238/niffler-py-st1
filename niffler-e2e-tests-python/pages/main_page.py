@@ -26,7 +26,6 @@ class MainPage(BasePage):
     def table_should_have_text(self, text):
         self.TABLE_BODY.should(have.text(text))
 
-
     def click_on_select_all_checkbox(self):
         self.click_on(self.CHECKBOX_ALL)
 
